@@ -15,7 +15,8 @@ public class UserController {
 
     //这里以RESTFul风格为例
     @RequestMapping("/user/{uid}")
-    public User findUserById(@PathVariable("uid") int uid){
+    public User findUserById(@PathVariable("uid") int uid) {
+        System.out.println("我被调用了");
         return userService.getUserById(uid);
     }
 }
