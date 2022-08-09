@@ -13,3 +13,8 @@ spring:
     password: Songyudong061618
   application:
     name: borrowservice
+
+#开启feign支持熔断的功能
+feign:
+  circuitbreaker:
+    enabled: true
