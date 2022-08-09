@@ -4,7 +4,7 @@ eureka:
   client:
     # 跟上面一样，需要指向Eureka服务端地址，这样才能进行注册
     service-url:
-      defaultZone: http://localhost:8888/eureka
+      defaultZone: http://eurekaA:8001/eureka,http://eurekaB:8002/eureka
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
