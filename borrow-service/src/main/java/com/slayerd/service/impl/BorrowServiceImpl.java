@@ -21,10 +21,10 @@ public class BorrowServiceImpl implements BorrowService {
     @Resource
     BorrowMapper mapper;
 
-    @Autowired
+    @Resource
     UserClient userClient;
 
-    @Autowired
+    @Resource
     BookClient bookClient;
     @Override
     public UserBorrowDetail getUserBorrowDetailByUid(int uid) {

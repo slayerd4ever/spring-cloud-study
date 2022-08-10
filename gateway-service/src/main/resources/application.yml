@@ -7,3 +7,13 @@ eureka:
 spring:
   application:
     name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: borrow-service #路由名称
+          uri: lb://borrowservice #路由的地址，lb代表loadbalancer
+          predicates: #路由规则，断言
+            - Path=/borrow/**
+          filters: # 添加过滤器
+            - AddRequestHeader=Test, HelloWorld!
+          # AddRequestHeader 就是添加请求头信息，其他工厂请查阅官网

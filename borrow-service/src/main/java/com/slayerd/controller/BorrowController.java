@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Collections;
 
 @RestController
@@ -18,7 +19,8 @@ public class BorrowController {
 
     //A @HystrixCommand(fallbackMethod = "executeOnError")
     @RequestMapping("/borrow/{uid}")
-    UserBorrowDetail findUserBorrows(@PathVariable("uid") int uid){
+    UserBorrowDetail findUserBorrows(@PathVariable("uid") int uid, HttpServletRequest request){
+        System.out.println(request.getHeader("Test"));
         return service.getUserBorrowDetailByUid(uid);
     }
 
